@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#142d25">
+  <link rel="icon" type="image/svg+xml" href="assets/aace-remedy-point-mark.svg">
   <meta name="description" content="Vastu consultations, Vedic Numerology and thoughtful remedies with Annuu at AACE Remedy Point.">
   <meta property="og:title" content="AACE Remedy Point — Find your place in balance">
   <meta property="og:description" content="Personal Vastu and Numerology guidance with Annuu.">
@@ -86,7 +87,7 @@
     .header { position: sticky; z-index: 20; top: 0; background: rgb(252 251 247 / 94%); backdrop-filter: blur(14px); }
     .nav { display: flex; min-height: 78px; align-items: center; justify-content: space-between; gap: 30px; border-bottom: 1px solid var(--rule); }
     .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-    .brand-seal { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); font-family: var(--serif); font-size: 1.05rem; }
+    .brand-mark { width: 48px; height: 48px; flex: 0 0 auto; }
     .brand-name { display: grid; gap: 3px; }
     .brand-name strong { color: var(--forest); font-family: var(--serif); font-size: 1.06rem; font-weight: 600; }
     .brand-name small { color: var(--quiet); font-size: .58rem; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
@@ -371,7 +372,7 @@
     }
     @media (max-width: 430px) {
       .brand-name strong { font-size: .93rem; }
-      .brand-seal { width: 38px; height: 38px; }
+      .brand-mark { width: 42px; height: 42px; }
       .hero-actions { align-items: stretch; flex-direction: column; }
       .hero-actions .button { width: 100%; }
       .offer { grid-template-columns: 1fr; }
@@ -404,7 +405,7 @@
   <header class="header">
     <nav class="container nav" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="AACE Remedy Point home">
-        <span class="brand-seal" aria-hidden="true">A</span>
+        <img class="brand-mark" src="assets/aace-remedy-point-mark.svg" alt="" aria-hidden="true">
         <span class="brand-name"><strong>AACE Remedy Point</strong><small>With Annuu</small></span>
       </a>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
