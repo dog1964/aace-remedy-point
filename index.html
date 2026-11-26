@@ -217,6 +217,14 @@
     .offer { display: grid; overflow: hidden; grid-template-columns: .75fr 1.25fr; border: 1px solid var(--rule); background: white; }
     .offer-art { position: relative; display: grid; min-height: 300px; place-items: center; overflow: hidden; background: var(--forest); }
     .offer:nth-child(2) .offer-art { background: #817654; }
+    .numerology-art { background: #817654; }
+    .numerology-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .numerology-art::before { width: 190px; background: rgb(20 45 37 / 23%); }
+    .numerology-art::after { width: 132px; background: rgb(20 45 37 / 32%); }
+    .numerology-visual { position: relative; z-index: 1; display: grid; gap: 10px; justify-items: center; padding: 18px; color: white; text-align: center; text-shadow: 0 2px 12px rgb(0 0 0 / 55%); }
+    .numerology-digits { display: flex; align-items: center; gap: 13px; color: var(--gold-light); font-family: var(--serif); font-size: 2rem; }
+    .numerology-digits span:nth-child(2) { font-size: 1.45rem; }
+    .numerology-caption { font-size: .56rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
     .offer-art::before, .offer-art::after { position: absolute; width: 190px; aspect-ratio: 1; border: 1px solid rgb(232 210 168 / 46%); border-radius: 50%; content: ""; }
     .offer-art::after { width: 132px; border-color: rgb(232 210 168 / 65%); }
     .offer-symbol { position: relative; z-index: 1; color: var(--gold-light); font-family: var(--serif); font-size: 4rem; }
@@ -276,22 +284,24 @@
     .delete-product { min-height: 30px; padding: 0 10px; border: 1px solid #cda8a2; background: transparent; color: #934a40; cursor: pointer; font-size: .63rem; font-weight: 750; }
     .delete-product:hover { background: #f8ecea; }
 
-    .testimonials { background: var(--forest); color: white; }
-    .testimonials h2 { color: white; }
-    .testimonials .section-head > p { color: rgb(255 255 255 / 64%); }
-    .testimonials .eyebrow { color: var(--gold-light); }
-    .quote-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
-    .quote { position: relative; min-height: 255px; padding: 26px; border: 1px solid rgb(255 255 255 / 16%); background: rgb(255 255 255 / 4%); }
-    .quote-stars { color: var(--gold-light); font-size: .78rem; letter-spacing: .13em; }
-    .quote blockquote { margin: 19px 0 24px; color: rgb(255 255 255 / 78%); font-family: var(--serif); font-size: 1.03rem; font-style: italic; line-height: 1.68; }
-    .quote figcaption strong { display: block; font-size: .8rem; }
-    .quote figcaption span { display: block; margin-top: 5px; color: rgb(255 255 255 / 52%); font-size: .6rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
-    .quote-mark { position: absolute; top: 8px; right: 19px; color: rgb(232 210 168 / 20%); font-family: var(--serif); font-size: 4rem; }
+    .local-guidance { background: var(--forest); color: white; }
+    .local-guidance h2 { color: white; }
+    .local-guidance .section-head > p { color: rgb(255 255 255 / 64%); }
+    .local-guidance .eyebrow { color: var(--gold-light); }
+    .local-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
+    .local-card { min-height: 230px; padding: 25px; border: 1px solid rgb(255 255 255 / 16%); background: rgb(255 255 255 / 4%); }
+    .local-card > span { color: var(--gold-light); font-size: .59rem; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
+    .local-card h3 { margin: 27px 0 11px; color: white; font-family: var(--serif); font-size: 1.45rem; font-weight: 500; }
+    .local-card p { margin: 0; color: rgb(255 255 255 / 68%); font-size: .8rem; line-height: 1.75; }
 
     .contact { padding: 80px 0; background: var(--cream); }
     .contact-grid { display: grid; align-items: center; gap: 50px; grid-template-columns: 1fr auto; }
     .contact-copy { max-width: 650px; }
     .contact-copy > p { max-width: 570px; color: var(--quiet); line-height: 1.8; }
+    .business-address { display: flex; align-items: flex-start; gap: 12px; margin-top: 24px; color: var(--forest); font-size: .84rem; font-style: normal; line-height: 1.7; }
+    .business-address svg { width: 19px; height: 19px; flex: 0 0 auto; margin-top: 2px; color: #a37c44; }
+    .business-address a { display: inline-block; margin-top: 5px; color: #80602f; font-size: .69rem; font-weight: 800; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .business-address a:hover { text-decoration: underline; }
     .contact-links { display: grid; gap: 10px; min-width: 235px; }
     .contact-links .button { width: 100%; }
     .contact-links .button-outline { border-color: var(--forest); background: transparent; color: var(--forest); }
@@ -378,8 +388,7 @@
       .product-info h3 { font-size: 1.08rem; }
       .product-info p { min-height: 56px; font-size: .72rem; }
       .product-bottom { align-items: flex-start; flex-direction: column; }
-      .quote-grid { grid-template-columns: 1fr; }
-      .quote { min-height: 220px; }
+      .local-grid { grid-template-columns: 1fr; }
       .contact-grid { gap: 24px; grid-template-columns: 1fr; }
       .contact-links { width: 100%; }
       .footer-inner { align-items: flex-start; flex-direction: column; justify-content: center; padding-block: 22px; }
@@ -435,7 +444,7 @@
         <a href="#services">Services</a>
         <a href="#shop">Shop</a>
         <a href="#about">About Annuu</a>
-        <a href="#stories">Stories</a>
+        <a href="#stories">Delhi guidance</a>
         <a class="button" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
       </div>
     </nav>
@@ -458,7 +467,7 @@
           </div>
         </div>
         <div class="hero-visual">
-          <img class="hero-photo" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=88" alt="Warm, thoughtfully arranged living room" fetchpriority="high">
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1100&q=88" alt="Photograph of a warm, thoughtfully arranged home interior" fetchpriority="high">
           <div class="visual-label"><p>“A balanced space can be the beginning of a more mindful life.”</p><span>A note from Annuu</span></div>
         </div>
         <span class="hero-index">01 — AACE REMEDY POINT</span>
@@ -564,7 +573,13 @@
             </div>
           </article>
           <article class="offer">
-            <div class="offer-art" aria-hidden="true"><span class="offer-symbol">8</span></div>
+            <div class="offer-art numerology-art">
+              <img class="numerology-photo" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=85" alt="A person writing notes in a notebook">
+              <div class="numerology-visual" role="img" aria-label="Illustrative numerology motif for birth, name and destiny numbers">
+                <span class="numerology-digits" aria-hidden="true"><span>1</span><span>·</span><span>5</span><span>·</span><span>9</span></span>
+                <span class="numerology-caption" aria-hidden="true">Birth · name · destiny</span>
+              </div>
+            </div>
             <div class="offer-copy">
               <span class="offer-type">Vedic Numerology</span>
               <h3>Your numbers, your story</h3>
@@ -596,32 +611,29 @@
       </div>
     </section>
 
-    <section class="section testimonials" id="stories">
+    <section class="section local-guidance" id="stories">
       <div class="container">
         <div class="section-head center">
-          <span class="eyebrow">Client reflections</span>
-          <h2>Stories of <em>new perspective.</em></h2>
-          <p>A few words from people who have shared their journey with Annuu.</p>
+          <span class="eyebrow">Based in Shahdara, Delhi</span>
+          <h2>Guidance for your<br><em>Delhi home and life.</em></h2>
+          <p>Explore Vastu, Vedic Numerology and thoughtful remedies with AACE Remedy Point in Ram Nagar, Shahdara.</p>
         </div>
-        <div class="quote-grid">
-          <figure class="quote">
-            <span class="quote-mark" aria-hidden="true">“</span>
-            <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>Annuu's Vastu consultation gave us a fresh perspective on our office and practical ideas we could put into place.</blockquote>
-            <figcaption><strong>Rajesh M.</strong><span>Entrepreneur · Mumbai</span></figcaption>
-          </figure>
-          <figure class="quote">
-            <span class="quote-mark" aria-hidden="true">“</span>
-            <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>The Numerology report was eye-opening and gave me a thoughtful framework while considering a career change.</blockquote>
-            <figcaption><strong>Sarah J.</strong><span>Creative Director · Delhi</span></figcaption>
-          </figure>
-          <figure class="quote">
-            <span class="quote-mark" aria-hidden="true">“</span>
-            <div class="quote-stars" aria-label="5 out of 5 stars">★★★★★</div>
-            <blockquote>The guidance felt personal and clear. I left with simple steps to consider for our restaurant.</blockquote>
-            <figcaption><strong>Priya S.</strong><span>Restaurateur · Bangalore</span></figcaption>
-          </figure>
+        <div class="local-grid">
+          <article class="local-card">
+            <span>01 · Vastu Shastra</span>
+            <h3>Homes &amp; workplaces</h3>
+            <p>Discuss directions, room layouts and practical Vastu considerations for your Delhi home or place of work.</p>
+          </article>
+          <article class="local-card">
+            <span>02 · Vedic Numerology</span>
+            <h3>Your numbers, thoughtfully explored</h3>
+            <p>Ask about a personal reading exploring birth and name numbers, with guidance shaped around your questions.</p>
+          </article>
+          <article class="local-card">
+            <span>03 · Remedies &amp; products</span>
+            <h3>Considered choices</h3>
+            <p>Connect about gemstones, yantras and Vastu products, and ask Annuu what may be available.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -632,6 +644,10 @@
           <span class="eyebrow">Your next step</span>
           <h2>Let’s begin<br><em>with a conversation.</em></h2>
           <p>Tell Annuu what you are exploring. Reach out about a home consultation, a Numerology reading or simply to ask a question.</p>
+          <address class="business-address">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg>
+            <span>Ram Nagar, Shahdara,<br>Delhi 110032<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Ram+Nagar%2C+Shahdara%2C+Delhi+110032" target="_blank" rel="noopener noreferrer">Get directions ↗</a></span>
+          </address>
         </div>
         <div class="contact-links">
           <a class="button" href="https://wa.me/919311377874" target="_blank" rel="noopener noreferrer">WhatsApp Annuu <span aria-hidden="true">↗</span></a>
@@ -660,6 +676,7 @@
           <li><a href="https://commons.wikimedia.org/wiki/File:A_Sri_Yantra_copper_relief.jpg" target="_blank" rel="noopener noreferrer">Sri Yantra · Ms Sarah Welch</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:Rudraksha_mala.jpg" target="_blank" rel="noopener noreferrer">Rudraksha mala · Janak Bhatta</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:NM_Gypsum_Selenite_Cluster_2.jpg" target="_blank" rel="noopener noreferrer">Selenite cluster · Bryan Barnes</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></li>
+          <li><a href="https://unsplash.com/photos/person-writing-on-white-paper-using-black-pen-photo-1455390582262-044cdead277a" target="_blank" rel="noopener noreferrer">Numerology writing photo · Unsplash</a></li>
         </ul>
       </details>
     </div>
