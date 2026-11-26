@@ -193,11 +193,12 @@
 
     .services { background: var(--paper); }
     .service-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
-    .service-card { position: relative; min-height: 325px; padding: 29px; border: 1px solid var(--rule); background: var(--paper); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+    .service-card { position: relative; min-height: 410px; overflow: hidden; border: 1px solid var(--rule); background: var(--paper); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
     .service-card:hover { transform: translateY(-5px); border-color: #cdb98e; box-shadow: 0 20px 50px rgb(20 45 37 / 9%); }
+    .service-photo { display: block; width: 100%; height: 175px; object-fit: cover; }
+    .service-card-copy { padding: 23px 25px 25px; }
     .service-number { color: var(--gold); font-family: var(--serif); font-size: .9rem; letter-spacing: .1em; }
-    .service-icon { display: grid; width: 54px; height: 54px; margin-top: 28px; place-items: center; border-radius: 50%; background: var(--cream); color: var(--forest-2); font-family: var(--serif); font-size: 1.7rem; }
-    .service-card h3 { margin: 20px 0 10px; color: var(--forest); font-family: var(--serif); font-size: 1.55rem; font-weight: 500; }
+    .service-card h3 { margin: 12px 0 10px; color: var(--forest); font-family: var(--serif); font-size: 1.55rem; font-weight: 500; }
     .service-card p { margin: 0; color: var(--quiet); font-size: .84rem; line-height: 1.7; }
     .service-card .text-link { margin-top: 22px; }
 
@@ -348,7 +349,6 @@
       .daily-number { width: 66px; height: 66px; font-size: 2.1rem; }
       .daily-grid > .text-link { grid-column: 2; }
       .service-grid { grid-template-columns: 1fr 1fr; }
-      .service-card:last-child { grid-column: 1 / -1; min-height: 270px; }
       .offer { grid-template-columns: 1fr; }
       .offer-art { min-height: 190px; }
       .product-grid { grid-template-columns: repeat(2, 1fr); }
@@ -373,7 +373,7 @@
       .daily-grid { gap: 17px; grid-template-columns: 1fr; }
       .daily-grid > .text-link { grid-column: 1; }
       .service-grid { grid-template-columns: 1fr; }
-      .service-card, .service-card:last-child { min-height: 285px; grid-column: auto; }
+      .service-card { min-height: 0; }
       .feature-grid { grid-template-columns: 1fr; }
       .feature-art { width: min(100%, 440px); margin-inline: auto; }
       .offer-grid { grid-template-columns: 1fr; }
@@ -511,25 +511,31 @@
         </div>
         <div class="service-grid">
           <article class="service-card">
-            <span class="service-number">01 / SPACE</span>
-            <span class="service-icon" aria-hidden="true">⌂</span>
-            <h3>Vastu consultations</h3>
-            <p>Explore the layout and directional flow of your home or workplace, with practical ideas to consider.</p>
-            <a class="text-link" href="#contact">Ask about Vastu <span aria-hidden="true">→</span></a>
+            <img class="service-photo" src="assets/vastu-consultation.jpg" alt="Bright, balanced home interior for a Vastu consultation" loading="lazy">
+            <div class="service-card-copy">
+              <span class="service-number">01 / SPACE</span>
+              <h3>Vastu consultations</h3>
+              <p>Explore the layout and directional flow of your home or workplace, with practical ideas to consider.</p>
+              <a class="text-link" href="#contact">Ask about Vastu <span aria-hidden="true">→</span></a>
+            </div>
           </article>
           <article class="service-card">
-            <span class="service-number">02 / SELF</span>
-            <span class="service-icon" aria-hidden="true">✧</span>
-            <h3>Vedic Numerology</h3>
-            <p>Learn about your core numbers and the patterns they can illuminate in your personal journey.</p>
-            <a class="text-link" href="#contact">Ask about a reading <span aria-hidden="true">→</span></a>
+            <img class="service-photo" src="assets/vedic-consultation.jpg" alt="A one-to-one consultation between two women" loading="lazy">
+            <div class="service-card-copy">
+              <span class="service-number">02 / GUIDANCE</span>
+              <h3>Vedic consultations</h3>
+              <p>Begin with a personal conversation about your questions and explore traditional Vedic guidance with Annuu.</p>
+              <a class="text-link" href="#contact">Ask about a consultation <span aria-hidden="true">→</span></a>
+            </div>
           </article>
           <article class="service-card">
-            <span class="service-number">03 / OBJECTS</span>
-            <span class="service-icon" aria-hidden="true">◇</span>
-            <h3>Sacred remedies</h3>
-            <p>Talk through thoughtful Vastu corrections and ask about crystals, pyramids and ritual pieces.</p>
-            <a class="text-link" href="#contact">Find a remedy <span aria-hidden="true">→</span></a>
+            <img class="service-photo" src="assets/numerology-writing.jpg" alt="Notebook and pen used to record numerology notes" loading="lazy">
+            <div class="service-card-copy">
+              <span class="service-number">03 / NUMBERS</span>
+              <h3>Vedic Numerology</h3>
+              <p>Learn about your core numbers and the patterns they can illuminate in your personal journey.</p>
+              <a class="text-link" href="#contact">Ask about a reading <span aria-hidden="true">→</span></a>
+            </div>
           </article>
         </div>
       </div>
@@ -676,7 +682,7 @@
           <li><a href="https://commons.wikimedia.org/wiki/File:A_Sri_Yantra_copper_relief.jpg" target="_blank" rel="noopener noreferrer">Sri Yantra · Ms Sarah Welch</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:Rudraksha_mala.jpg" target="_blank" rel="noopener noreferrer">Rudraksha mala · Janak Bhatta</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></li>
           <li><a href="https://commons.wikimedia.org/wiki/File:NM_Gypsum_Selenite_Cluster_2.jpg" target="_blank" rel="noopener noreferrer">Selenite cluster · Bryan Barnes</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a></li>
-          <li><a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Home and Numerology photos · Unsplash</a></li>
+          <li><a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Home, Vedic consultation and Numerology photos · Unsplash</a></li>
         </ul>
       </details>
     </div>
