@@ -87,7 +87,21 @@
     .header { position: sticky; z-index: 20; top: 0; background: rgb(252 251 247 / 94%); backdrop-filter: blur(14px); }
     .nav { display: flex; min-height: 78px; align-items: center; justify-content: space-between; gap: 30px; border-bottom: 1px solid var(--rule); }
     .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
-    .brand-mark { width: 48px; height: 48px; flex: 0 0 auto; }
+    .brand-emblem { position: relative; display: grid; width: 54px; height: 54px; flex: 0 0 auto; place-items: center; perspective: 700px; }
+    .brand-emblem::after { position: absolute; inset: 3px; overflow: hidden; border-radius: 50%; background: linear-gradient(112deg, transparent 30%, rgb(255 255 255 / 5%) 39%, rgb(255 255 255 / 52%) 47%, rgb(255 255 255 / 8%) 54%, transparent 63%); content: ""; pointer-events: none; animation: emblem-glint 8s ease-in-out infinite; }
+    .brand-mark { display: block; width: 50px; height: 50px; border-radius: 50%; transform-style: preserve-3d; filter: drop-shadow(0 3px 4px rgb(20 45 37 / 25%)); animation: emblem-float 8s ease-in-out infinite; transition: transform .35s ease, filter .35s ease; }
+    @keyframes emblem-float {
+      0%, 100% { transform: rotateX(0) rotateY(0) translateY(0); filter: drop-shadow(0 3px 4px rgb(20 45 37 / 22%)); }
+      35% { transform: rotateX(-8deg) rotateY(10deg) translateY(-2px); filter: drop-shadow(2px 6px 5px rgb(20 45 37 / 28%)); }
+      70% { transform: rotateX(5deg) rotateY(-7deg) translateY(1px); filter: drop-shadow(-1px 3px 4px rgb(20 45 37 / 24%)); }
+    }
+    @keyframes emblem-glint {
+      0%, 18%, 100% { transform: translateX(-24px) rotate(15deg); opacity: 0; }
+      32% { opacity: .8; }
+      49% { transform: translateX(24px) rotate(15deg); opacity: 0; }
+    }
+    .brand:hover .brand-mark { animation: none; transform: perspective(700px) rotateX(12deg) rotateY(-15deg) translateY(-2px); filter: drop-shadow(4px 7px 5px rgb(20 45 37 / 30%)); }
+    .brand:hover .brand-emblem::after { animation: none; opacity: .7; }
     .brand-name { display: grid; gap: 3px; }
     .brand-name strong { color: var(--forest); font-family: var(--serif); font-size: 1.06rem; font-weight: 600; }
     .brand-name small { color: var(--quiet); font-size: .58rem; font-weight: 750; letter-spacing: .2em; text-transform: uppercase; }
@@ -372,7 +386,8 @@
     }
     @media (max-width: 430px) {
       .brand-name strong { font-size: .93rem; }
-      .brand-mark { width: 42px; height: 42px; }
+      .brand-emblem { width: 46px; height: 46px; }
+      .brand-mark { width: 43px; height: 43px; }
       .hero-actions { align-items: stretch; flex-direction: column; }
       .hero-actions .button { width: 100%; }
       .offer { grid-template-columns: 1fr; }
@@ -391,6 +406,8 @@
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .brand-mark, .brand-emblem::after { animation: none !important; }
+      .brand:hover .brand-mark { transform: none; }
     }
   </style>
 </head>
@@ -405,7 +422,9 @@
   <header class="header">
     <nav class="container nav" aria-label="Main navigation">
       <a class="brand" href="#home" aria-label="AACE Remedy Point home">
-        <img class="brand-mark" src="assets/aace-remedy-point-mark.svg" alt="" aria-hidden="true">
+        <span class="brand-emblem" aria-hidden="true">
+          <img class="brand-mark" src="assets/aace-remedy-point-mark.svg" alt="">
+        </span>
         <span class="brand-name"><strong>AACE Remedy Point</strong><small>With Annuu</small></span>
       </a>
       <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">

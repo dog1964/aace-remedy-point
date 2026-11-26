@@ -1,10 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <circle cx="50" cy="50" r="47" fill="#142D25" stroke="#C49A5B" stroke-width="2"/>
-  <circle cx="50" cy="50" r="39" stroke="#E8D2A8" stroke-opacity=".72"/>
-  <circle cx="50" cy="50" r="31" stroke="#C49A5B" stroke-opacity=".55"/>
-  <path d="M50 10v12m0 56v12M10 50h12m56 0h12" stroke="#E8D2A8" stroke-width="1.5"/>
-  <path d="m50 25 18 25-18 25-18-25 18-25Z" fill="#C49A5B" fill-opacity=".12" stroke="#E8D2A8" stroke-width="1.8"/>
-  <path d="m50 25 0 50m-18-25h36m-18 0 12-15m-12 15 12 15m-12-15L38 35m12 15L38 65" stroke="#C49A5B" stroke-width="1.2"/>
-  <circle cx="50" cy="50" r="4" fill="#E8D2A8"/>
-  <path d="m50 5 2 4-2 4-2-4 2-4Zm45 45-4 2-4-2 4-2 4 2ZM50 95l-2-4 2-4 2 4-2 4ZM5 50l4-2 4 2-4 2-4-2Z" fill="#C49A5B"/>
+  <defs>
+    <radialGradient id="enamel" cx="32%" cy="24%" r="82%">
+      <stop stop-color="#285443"/>
+      <stop offset=".58" stop-color="#17392E"/>
+      <stop offset="1" stop-color="#0B211A"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="20" y1="18" x2="82" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3E2BB"/>
+      <stop offset=".46" stop-color="#C49A5B"/>
+      <stop offset="1" stop-color="#8A6335"/>
+    </linearGradient>
+    <linearGradient id="gem" x1="37" y1="29" x2="65" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9E8BF"/>
+      <stop offset=".38" stop-color="#D6B777"/>
+      <stop offset="1" stop-color="#9B713E"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="50" r="47" fill="#0B211A" stroke="url(#gold)" stroke-width="2.5"/>
+  <circle cx="50" cy="50" r="43" stroke="#F3E2BB" stroke-opacity=".4"/>
+  <circle cx="50" cy="50" r="37" fill="url(#enamel)" stroke="url(#gold)" stroke-width="1"/>
+  <circle cx="50" cy="50" r="31" stroke="#E8D2A8" stroke-opacity=".46"/>
+  <path d="M50 9v12m0 58v12M9 50h12m58 0h12M21 21l8 8m42 42 8 8m0-58-8 8M29 71l-8 8" stroke="url(#gold)" stroke-width="1.5"/>
+  <path d="m50 23 19 27-19 27-19-27 19-27Z" fill="url(#gem)" fill-opacity=".22" stroke="url(#gold)" stroke-width="2"/>
+  <path d="m50 23 0 54m-19-27h38m-19 0 12-16m-12 16 12 16m-12-16L38 34m12 16L38 66" stroke="url(#gold)" stroke-width="1.35"/>
+  <path d="m50 31 12 19-12 19-12-19 12-19Z" fill="url(#gem)" fill-opacity=".16" stroke="#F3E2BB" stroke-opacity=".65" stroke-width=".8"/>
+  <circle cx="50" cy="50" r="4" fill="#FFF2D3" stroke="#A87D46" stroke-width="1.5"/>
+  <path d="m50 4 2 4-2 4-2-4 2-4Zm46 46-4 2-4-2 4-2 4 2ZM50 96l-2-4 2-4 2 4-2 4ZM4 50l4-2 4 2-4 2-4-2Z" fill="url(#gold)"/>
 </svg>
