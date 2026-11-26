@@ -218,6 +218,8 @@
     .offer { display: grid; overflow: hidden; grid-template-columns: .75fr 1.25fr; border: 1px solid var(--rule); background: white; }
     .offer-art { position: relative; display: grid; min-height: 300px; place-items: center; overflow: hidden; background: var(--forest); }
     .offer:nth-child(2) .offer-art { background: #817654; }
+    .offer-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .offer-art.vastu-art::after { border: 0; border-radius: 0; background: linear-gradient(0deg, rgb(20 45 37 / 22%), transparent 58%); content: ""; }
     .numerology-art { background: #817654; }
     .numerology-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
     .numerology-art::before { width: 190px; background: rgb(20 45 37 / 23%); }
@@ -570,12 +572,14 @@
         </div>
         <div class="offer-grid">
           <article class="offer">
-            <div class="offer-art" aria-hidden="true"><span class="offer-symbol">⌂</span></div>
+            <div class="offer-art vastu-art" aria-hidden="true">
+              <img class="offer-photo" src="assets/vastu-consultation.jpg" alt="" loading="lazy">
+            </div>
             <div class="offer-copy">
               <span class="offer-type">Vastu Shastra</span>
               <h3>A more balanced home</h3>
               <p>A considered review of your home's directions and layout, with a clear set of recommendations to explore.</p>
-              <a class="text-link" href="#contact">Ask about a consultation <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="#contact">Book a Vastu consultation <span aria-hidden="true">→</span></a>
             </div>
           </article>
           <article class="offer">
